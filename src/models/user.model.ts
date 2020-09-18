@@ -5,8 +5,9 @@ import {
   CreateDateColumn,
   UpdateDateColumn,
 } from 'typeorm';
+import TableNames from '../constants/table-names';
 
-@Entity('users')
+@Entity(TableNames.Users)
 class User {
   @PrimaryGeneratedColumn('uuid')
   id: string;
@@ -21,10 +22,10 @@ class User {
   password: string;
 
   @CreateDateColumn()
-  createdAt: Date;
+  created_at: Date;
 
   @UpdateDateColumn()
-  updatedAt: Date;
+  updated_at: Date;
 }
 
 export default User;
